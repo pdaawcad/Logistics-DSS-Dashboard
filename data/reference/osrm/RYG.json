@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 32807.7,
+          "summary": "",
+          "duration": 29536.2,
+          "distance": 662132.3
+        },
+        {
+          "steps": [],
+          "weight": 33189.3,
+          "summary": "",
+          "duration": 29916.5,
+          "distance": 663103.9
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 65997,
+      "duration": 59452.7,
+      "distance": 1325236.2
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "rPSDlf___38LAAAAEAAAAAAAAAAAAAAAX7tGQeq1pkAAAAAAAAAAAAsAAAAQAAAAAAAAAAAAAABaqgCALm8JBrmAwQBAbwkGuIDBAAAAPwAAAAAAwzI7jP___38LAAAAEAAAAAAAAAAAAAAAX7tGQeq1pkAAAAAAAAAAAAsAAAAQAAAAAAAAAAAAAADQJwEALm8JBrmAwQBAbwkGuIDBAAAAPwAAAAAA",
+      "location": [
+        101.281582,
+        12.681401
+      ],
+      "name": "ถนนสุขุมวิท (นครระยอง 64) / ถนนสุขุมวิท (นครระยอง 64)",
+      "distance": 1.95836247
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

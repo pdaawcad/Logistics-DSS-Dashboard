@@ -1,0 +1,344 @@
+{
+  "dataset_id": "ubon-logistics-synthetic-v1",
+  "seed": 20251002,
+  "snapshot_at": "2025-09-30T23:59:59+07:00",
+  "reference_retrieval_date": "2026-10-02",
+  "is_synthetic": true,
+  "record_counts": {
+    "fuel_price_reference": 6,
+    "sources": 12,
+    "hubs": 11,
+    "routes": 20,
+    "vehicle_models": 3,
+    "vehicles": 46,
+    "drivers": 70,
+    "vehicle_maintenance": 92,
+    "customers": 300,
+    "calendar": 183,
+    "route_conditions": 1830,
+    "shipments": 12000,
+    "shipment_events": 83786,
+    "trips": 1653,
+    "trip_driver_assignments": 2253,
+    "trip_costs": 9810,
+    "shipment_legs": 24152,
+    "vehicle_daily": 8418
+  },
+  "shipment_status_counts": {
+    "DELIVERED": 11613,
+    "CANCELLED": 284,
+    "AWAITING_REDELIVERY": 5,
+    "AT_DESTINATION_HUB": 78,
+    "IN_TRANSIT": 20
+  },
+  "otd_completed_shipments_percent": 94.02,
+  "overdue_open_shipments": 9,
+  "total_recognized_transport_cost_thb": 9730965.57,
+  "months": [
+    {
+      "booking_month": "2025-04",
+      "bookings": 1400,
+      "delivered": 1370,
+      "cancelled": 30,
+      "open": 0,
+      "on_time": 1311,
+      "otd_percent": 95.69,
+      "recognized_transport_cost_thb": 1036969.62
+    },
+    {
+      "booking_month": "2025-05",
+      "bookings": 1700,
+      "delivered": 1651,
+      "cancelled": 49,
+      "open": 0,
+      "on_time": 1532,
+      "otd_percent": 92.79,
+      "recognized_transport_cost_thb": 1330694.19
+    },
+    {
+      "booking_month": "2025-06",
+      "bookings": 1900,
+      "delivered": 1855,
+      "cancelled": 45,
+      "open": 0,
+      "on_time": 1745,
+      "otd_percent": 94.07,
+      "recognized_transport_cost_thb": 1551663.67
+    },
+    {
+      "booking_month": "2025-07",
+      "bookings": 2200,
+      "delivered": 2149,
+      "cancelled": 51,
+      "open": 0,
+      "on_time": 2020,
+      "otd_percent": 94.0,
+      "recognized_transport_cost_thb": 1772431.44
+    },
+    {
+      "booking_month": "2025-08",
+      "bookings": 2300,
+      "delivered": 2243,
+      "cancelled": 57,
+      "open": 0,
+      "on_time": 2081,
+      "otd_percent": 92.78,
+      "recognized_transport_cost_thb": 1917814.04
+    },
+    {
+      "booking_month": "2025-09",
+      "bookings": 2500,
+      "delivered": 2345,
+      "cancelled": 52,
+      "open": 103,
+      "on_time": 2229,
+      "otd_percent": 95.05,
+      "recognized_transport_cost_thb": 2121392.61
+    }
+  ],
+  "destinations": [
+    {
+      "province": "เชียงใหม่",
+      "bookings": 4200,
+      "booking_share_percent": 35.0,
+      "delivered": 4100,
+      "on_time": 3825,
+      "otd_percent": 93.29,
+      "osrm_outbound_km": 924.01
+    },
+    {
+      "province": "กรุงเทพมหานคร",
+      "bookings": 1800,
+      "booking_share_percent": 15.0,
+      "delivered": 1752,
+      "on_time": 1667,
+      "otd_percent": 95.15,
+      "osrm_outbound_km": 604.414
+    },
+    {
+      "province": "ขอนแก่น",
+      "bookings": 1200,
+      "booking_share_percent": 10.0,
+      "delivered": 1118,
+      "on_time": 1087,
+      "otd_percent": 97.23,
+      "osrm_outbound_km": 287.448
+    },
+    {
+      "province": "กาฬสินธุ์",
+      "bookings": 960,
+      "booking_share_percent": 8.0,
+      "delivered": 932,
+      "on_time": 825,
+      "otd_percent": 88.52,
+      "osrm_outbound_km": 220.638
+    },
+    {
+      "province": "ศรีสะเกษ",
+      "bookings": 840,
+      "booking_share_percent": 7.0,
+      "delivered": 822,
+      "on_time": 750,
+      "otd_percent": 91.24,
+      "osrm_outbound_km": 68.038
+    },
+    {
+      "province": "นครราชสีมา",
+      "bookings": 720,
+      "booking_share_percent": 6.0,
+      "delivered": 704,
+      "on_time": 679,
+      "otd_percent": 96.45,
+      "osrm_outbound_km": 378.725
+    },
+    {
+      "province": "อุดรธานี",
+      "bookings": 720,
+      "booking_share_percent": 6.0,
+      "delivered": 702,
+      "on_time": 666,
+      "otd_percent": 94.87,
+      "osrm_outbound_km": 406.468
+    },
+    {
+      "province": "ร้อยเอ็ด",
+      "bookings": 600,
+      "booking_share_percent": 5.0,
+      "delivered": 585,
+      "on_time": 558,
+      "otd_percent": 95.38,
+      "osrm_outbound_km": 172.08
+    },
+    {
+      "province": "ลำปาง",
+      "bookings": 480,
+      "booking_share_percent": 4.0,
+      "delivered": 451,
+      "on_time": 436,
+      "otd_percent": 96.67,
+      "osrm_outbound_km": 827.649
+    },
+    {
+      "province": "ระยอง",
+      "bookings": 480,
+      "booking_share_percent": 4.0,
+      "delivered": 447,
+      "on_time": 425,
+      "otd_percent": 95.08,
+      "osrm_outbound_km": 662.132
+    }
+  ],
+  "quality_checks": [
+    {
+      "check": "unique_shipments",
+      "passed": true,
+      "detail": 12000
+    },
+    {
+      "check": "unique_trips",
+      "passed": true,
+      "detail": 1653
+    },
+    {
+      "check": "unique_vehicles",
+      "passed": true,
+      "detail": 46
+    },
+    {
+      "check": "unique_drivers",
+      "passed": true,
+      "detail": 70
+    },
+    {
+      "check": "unique_customers",
+      "passed": true,
+      "detail": 300
+    },
+    {
+      "check": "unique_hubs",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "check": "unique_routes",
+      "passed": true,
+      "detail": 20
+    },
+    {
+      "check": "unique_shipment_events",
+      "passed": true,
+      "detail": 83786
+    },
+    {
+      "check": "unique_shipment_legs",
+      "passed": true,
+      "detail": 24152
+    },
+    {
+      "check": "shipment_count",
+      "passed": true,
+      "detail": 12000
+    },
+    {
+      "check": "chiangmai_largest",
+      "passed": true,
+      "detail": {
+        "H_CNX": 4200,
+        "H_BKK": 1800,
+        "H_SSK": 840,
+        "H_KSN": 960,
+        "H_KKC": 1200,
+        "H_NMA": 720,
+        "H_RET": 600,
+        "H_UTH": 720,
+        "H_RYG": 480,
+        "H_LPT": 480
+      }
+    },
+    {
+      "check": "shipment_foreign_keys",
+      "passed": true,
+      "detail": "customers, hubs, routes"
+    },
+    {
+      "check": "leg_foreign_keys",
+      "passed": true,
+      "detail": "shipment-trip links"
+    },
+    {
+      "check": "event_foreign_keys",
+      "passed": true,
+      "detail": "shipment, hub, trip"
+    },
+    {
+      "check": "no_future_events",
+      "passed": true,
+      "detail": "events censored at snapshot"
+    },
+    {
+      "check": "no_future_actuals",
+      "passed": true,
+      "detail": "future timestamps blank"
+    },
+    {
+      "check": "capacity_constraints",
+      "passed": true,
+      "detail": "weight and body volume"
+    },
+    {
+      "check": "vehicle_no_overlaps",
+      "passed": true,
+      "detail": "outbound plus empty return reserved"
+    },
+    {
+      "check": "vehicle_rest_gaps",
+      "passed": true,
+      "detail": "12h linehaul / 10h local before reuse; modelling rule, not legal certification"
+    },
+    {
+      "check": "maintenance_no_trip_overlap",
+      "passed": true,
+      "detail": "unavailable periods respected"
+    },
+    {
+      "check": "cancelled_without_legs",
+      "passed": true,
+      "detail": "no transport allocation to pre-dispatch cancellation"
+    },
+    {
+      "check": "daily_utilization_bounds",
+      "passed": true,
+      "detail": "hours denominator explicit"
+    },
+    {
+      "check": "cost_settlement_reconciliation",
+      "passed": true,
+      "detail": "six categories sum to trip cost"
+    },
+    {
+      "check": "allocation_reconciliation",
+      "passed": true,
+      "detail": "weights allocated with cent-preserving rounding"
+    },
+    {
+      "check": "manifest_weight",
+      "passed": true,
+      "detail": "linked cargo = booked truck load"
+    },
+    {
+      "check": "fuel_arithmetic",
+      "passed": true,
+      "detail": "litres x price benchmark"
+    },
+    {
+      "check": "shipment_milestone_order",
+      "passed": true,
+      "detail": "booking -> linehaul -> hub -> out for delivery -> delivered"
+    },
+    {
+      "check": "otd_null_rules",
+      "passed": true,
+      "detail": "unfinished/cancelled not scored on-time"
+    }
+  ]
+}

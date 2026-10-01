@@ -1,0 +1,12 @@
+﻿hub_id,hub_name,province,region,latitude,longitude,coordinates_basis
+H_UBP,ศูนย์จำลองอุบลราชธานี,อุบลราชธานี,Northeast,15.2448,104.8575,"Assumed approximate city centre, not a real warehouse"
+H_CNX,ศูนย์จำลองเชียงใหม่,เชียงใหม่,North,18.7883,98.9853,"Assumed approximate city centre, not a real warehouse"
+H_BKK,ศูนย์จำลองกรุงเทพมหานคร,กรุงเทพมหานคร,Central,13.7563,100.5018,"Assumed approximate city centre, not a real warehouse"
+H_KKC,ศูนย์จำลองขอนแก่น,ขอนแก่น,Northeast,16.4322,102.835,"Assumed approximate city centre, not a real warehouse"
+H_KSN,ศูนย์จำลองกาฬสินธุ์,กาฬสินธุ์,Northeast,16.4328,103.5061,"Assumed approximate city centre, not a real warehouse"
+H_SSK,ศูนย์จำลองศรีสะเกษ,ศรีสะเกษ,Northeast,15.1186,104.322,"Assumed approximate city centre, not a real warehouse"
+H_NMA,ศูนย์จำลองนครราชสีมา,นครราชสีมา,Northeast,14.9799,102.0978,"Assumed approximate city centre, not a real warehouse"
+H_UTH,ศูนย์จำลองอุดรธานี,อุดรธานี,Northeast,17.4138,102.793,"Assumed approximate city centre, not a real warehouse"
+H_RET,ศูนย์จำลองร้อยเอ็ด,ร้อยเอ็ด,Northeast,16.0538,103.652,"Assumed approximate city centre, not a real warehouse"
+H_LPT,ศูนย์จำลองลำปาง,ลำปาง,North,18.2888,99.4937,"Assumed approximate city centre, not a real warehouse"
+H_RYG,ศูนย์จำลองระยอง,ระยอง,East,12.6814,101.2816,"Assumed approximate city centre, not a real warehouse"

@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 48040.9,
+          "summary": "",
+          "duration": 44769.4,
+          "distance": 924010
+        },
+        {
+          "steps": [],
+          "weight": 48302.2,
+          "summary": "",
+          "duration": 45029.4,
+          "distance": 926213.7
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 96343.1,
+      "duration": 89798.8,
+      "distance": 1850223.7
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "aPdfgCZZEIwFAAAAcAAAAAAAAAAAAAAA7WV4QLJLm0IAAAAAAAAAAAUAAABwAAAAAAAAAAAAAADQJwEAXmXmBcqvHgFUZeYFzK8eAQAALwwAAAAA",
+      "location": [
+        98.98531,
+        18.788298
+      ],
+      "name": "ถนนจ่าบ้าน",
+      "distance": 1.077318158
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

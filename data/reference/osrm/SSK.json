@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 7352.1,
+          "summary": "",
+          "duration": 4080.6,
+          "distance": 68037.7
+        },
+        {
+          "steps": [],
+          "weight": 7376,
+          "summary": "",
+          "duration": 4103.2,
+          "distance": 69993.5
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 14728.1,
+      "duration": 8183.8,
+      "distance": 138031.2
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "R90fihbElIooAAAAGAAAAAAAAAAAAAAA2BM2Qjp8z0EAAAAAAAAAACgAAAAYAAAAAAAAAAAAAADQJwEA2dM3Btqw5gDQ0zcGCLHmAAAAPxAAAAAA",
+      "location": [
+        104.322009,
+        15.118554
+      ],
+      "name": "ถนนเทพา",
+      "distance": 5.181011913
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

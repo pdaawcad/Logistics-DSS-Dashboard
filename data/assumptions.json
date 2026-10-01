@@ -1,0 +1,110 @@
+{
+  "seed": 20251002,
+  "period_start": "2025-04-01T00:00:00+07:00",
+  "snapshot_at": "2025-09-30T23:59:59+07:00",
+  "timezone": "Asia/Bangkok (+07:00)",
+  "origin": "อุบลราชธานี",
+  "destination_shares": {
+    "เชียงใหม่": 0.35,
+    "กรุงเทพมหานคร": 0.15,
+    "ขอนแก่น": 0.1,
+    "กาฬสินธุ์": 0.08,
+    "ศรีสะเกษ": 0.07,
+    "นครราชสีมา": 0.06,
+    "อุดรธานี": 0.06,
+    "ร้อยเอ็ด": 0.05,
+    "ลำปาง": 0.04,
+    "ระยอง": 0.04
+  },
+  "demand_basis": "User-selected scenario: Chiang Mai largest; all destination shares assumed, not market survey data",
+  "booking_count": 12000,
+  "manifest_count": 600,
+  "bookings_per_manifest": 20,
+  "monthly_manifest_counts": {
+    "2025-04": 70,
+    "2025-05": 85,
+    "2025-06": 95,
+    "2025-07": 110,
+    "2025-08": 115,
+    "2025-09": 125
+  },
+  "pre_dispatch_cancel_probability": 0.025,
+  "customer_unavailable_first_attempt_probability": 0.06,
+  "weight_kg": "clip(lognormal(mu=4.1,sigma=0.65),5,180); consignments may contain multiple parcels",
+  "volume_m3": "weight / uniform(160,300) kg/m3; not based on carrier dimensional-weight tariffs",
+  "sla": "EXPRESS 1 calendar day; STANDARD 1 day if <250 km else 2 days; ECONOMY 3 days. Deadline 18:00 +07. Operates seven days; no holiday exclusion. Market context only from EMS, not an EMS SLA.",
+  "last_mile_km": "(20 + 1.8 x stop count) x uniform(0.90,1.12), including return to local hub; fully assumed",
+  "linehaul_distance": "OSRM outbound/return benchmark multiplied by synthetic detour factor; not historical 2025 measurement",
+  "linehaul_empty_return": true,
+  "linehaul_crew_size": 2,
+  "last_mile_crew_size": 1,
+  "vehicle_reuse_rest_hours": {
+    "LINEHAUL": 12,
+    "LAST_MILE": 10
+  },
+  "route_drive_speed_kmh": {
+    "LINEHAUL": "uniform(58,65)",
+    "LAST_MILE": "uniform(24,32)"
+  },
+  "destination_dwell_hours": "12 if >400 km, otherwise 8; off-duty/dwell between outbound and return",
+  "linehaul_disruption_probability": "0.055 + 0.075*observed_rain + 0.025*(traffic_forecast_level==3)",
+  "linehaul_wait_hours": "uniform(8,32) when disruption; otherwise uniform(0.2,2.2)",
+  "rain_probabilities": {
+    "04": 0.15,
+    "05": 0.32,
+    "06": 0.42,
+    "07": 0.48,
+    "08": 0.57,
+    "09": 0.6
+  },
+  "rain_forecast_correct_probability": 0.85,
+  "traffic_level_probabilities": [
+    0.25,
+    0.55,
+    0.2
+  ],
+  "fuel_efficiency": "baseline_km_per_litre * prior_fuel_skill_factor * (1-0.13*load_ratio)*(1-0.025*(traffic-1))*(1-0.04*rain); return empty uses baseline * skill",
+  "vehicle_models": {
+    "NLR": {
+      "vehicle_type": "4-wheel box truck",
+      "gross_vehicle_weight_kg": 4400,
+      "assumed_tare_kg": 2600,
+      "capacity_kg": 1800,
+      "capacity_m3": 10,
+      "baseline_km_per_litre": 8.8,
+      "maintenance_thb_per_km": 1.1,
+      "depreciation_thb_per_km": 0.9,
+      "crew_hourly_cost_thb": 70
+    },
+    "NPR": {
+      "vehicle_type": "6-wheel medium box truck",
+      "gross_vehicle_weight_kg": 8500,
+      "assumed_tare_kg": 4500,
+      "capacity_kg": 4000,
+      "capacity_m3": 20,
+      "baseline_km_per_litre": 7.5,
+      "maintenance_thb_per_km": 1.7,
+      "depreciation_thb_per_km": 1.3,
+      "crew_hourly_cost_thb": 85
+    },
+    "FTR": {
+      "vehicle_type": "6-wheel large box truck",
+      "gross_vehicle_weight_kg": 15000,
+      "assumed_tare_kg": 7000,
+      "capacity_kg": 8000,
+      "capacity_m3": 40,
+      "baseline_km_per_litre": 5.5,
+      "maintenance_thb_per_km": 2.5,
+      "depreciation_thb_per_km": 1.9,
+      "crew_hourly_cost_thb": 95
+    }
+  },
+  "driver_allowance": "crew hours=(outbound+return driving hours)+0.12*shipment_count+1; cost=crew hours*assumed crew hourly cost*crew size; add 180 THB/crew for long overnight trip. Not observed wages.",
+  "toll": "uniform(80,220) THB for BKK/RYG linehaul, otherwise zero; assumed budget, not official toll quotation",
+  "handling": "20 THB per consignment on linehaul, 8 THB per consignment on each last-mile attempt",
+  "recognition": "All costs recognized on trip completion. Delivered shipments can have unsettled empty-return costs. No future actuals in snapshot.",
+  "allocation": "Allocate full completed-trip cost by consignment weight with cent-preserving largest remainder; include empty return; never copy full trip cost onto every shipment.",
+  "fleet_occupied_hours": "Vehicle reserved time including travel, service and destination dwell. Available hours=24-maintenance; not engine-on utilization.",
+  "personal_data": "All customer/driver names and identifiers are fictional; no real plates, phone numbers, home addresses or GPS logs",
+  "model_validation_limit": "Synthetic train/test metrics demonstrate method only. Not evidence of accuracy on real logistics operations."
+}

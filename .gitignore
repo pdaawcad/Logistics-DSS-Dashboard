@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+*.inspect.ndjson
+*.zip
+.DS_Store
+Thumbs.db

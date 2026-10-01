@@ -1,0 +1,195 @@
+﻿table,column,type,unit,nullable,foreign_key,description_th,provenance,example
+fuel_price_reference,fuel_price_id,text,,False,,คีย์ราคาดีเซล benchmark รายเดือน,REAL_REFERENCE,FUEL202504
+fuel_price_reference,reference_month,text,,False,,เดือนรายงานที่ให้ราคาน้ำมัน benchmark,REAL_REFERENCE,2025-04
+fuel_price_reference,fuel_type,text,,False,,ประเภทเชื้อเพลิง Diesel ของกองรถ,REAL_REFERENCE,Diesel
+fuel_price_reference,benchmark_thb_per_litre,decimal,THB per unit,False,,ค่าราคาดีเซลจากรายงาน EPPO ใช้เป็น benchmark ทั้งเดือน ไม่ใช่ค่าเฉลี่ย,REAL_REFERENCE,31.94
+fuel_price_reference,source_id,text,,False,,รหัสแหล่งอ้างอิงสาธารณะ,REAL_REFERENCE,SRC_EPPO_04
+fuel_price_reference,is_observed_daily_price,boolean,,False,,False เพราะใช้ราคาฐานจากรายงาน ไม่ได้มีราคาซื้อจริงรายวัน,REAL_REFERENCE,False
+sources,source_id,text,,False,,รหัสแหล่งอ้างอิงสาธารณะ,REAL_REFERENCE,SRC_OSRM
+sources,publisher,text,,False,,ผู้เผยแพร่แหล่งอ้างอิง,REAL_REFERENCE,OSRM / OpenStreetMap contributors
+sources,title,text,,False,,ชื่อแหล่งอ้างอิง,REAL_REFERENCE,Route API
+sources,url,text,,False,,URL แหล่งข้อมูลต้นฉบับ,REAL_REFERENCE,https://project-osrm.org/docs/v5.24.0/api/
+sources,reference_period,text,,False,,ช่วงเวลาของแหล่งอ้างอิง แยกจากงวดข้อมูลจำลอง,REAL_REFERENCE,retrieved 2026-10-02
+sources,used_for,text,,False,,สิ่งที่นำแหล่งอ้างอิงมาใช้ในแบบจำลอง,REAL_REFERENCE,"Driving-network distance benchmark; API car duration, not truck time"
+sources,limitation,text,,False,,ข้อจำกัดการนำแหล่งอ้างอิงมาใช้,REAL_REFERENCE,City-centre coordinates assumed; current map applied to synthetic 2025; car profile does not enforce truck restrictions
+hubs,hub_id,text,,False,,รหัสศูนย์จำลอง,SYNTHETIC_OR_DERIVED,H_UBP
+hubs,hub_name,text,,False,,ชื่อศูนย์จำลองในจังหวัดจริง,SYNTHETIC_OR_DERIVED,ศูนย์จำลองอุบลราชธานี
+hubs,province,text,,False,,ชื่อจังหวัดจริงที่ใช้ในสถานการณ์,SYNTHETIC_OR_DERIVED,อุบลราชธานี
+hubs,region,text,,False,,กลุ่มภูมิภาคในโครงงาน,SYNTHETIC_OR_DERIVED,Northeast
+hubs,latitude,decimal,,False,,ละติจูด WGS84 จุดประมาณศูนย์เมืองที่ตั้งสมมติ,SYNTHETIC_OR_DERIVED,15.2448
+hubs,longitude,decimal,,False,,ลองจิจูด WGS84 จุดประมาณศูนย์เมืองที่ตั้งสมมติ,SYNTHETIC_OR_DERIVED,104.8575
+hubs,coordinates_basis,text,,False,,คำอธิบายจุดพิกัดของศูนย์สมมติ,SYNTHETIC_OR_DERIVED,"Assumed approximate city centre, not a real warehouse"
+routes,route_id,text,,False,,รหัสเส้นทางระหว่างศูนย์หรือวงรอบส่งในเมือง,SYNTHETIC_OR_DERIVED,R_CNX
+routes,route_kind,text,,False,,เส้นทางระหว่างศูนย์หรือวงรอบส่งในเมือง,SYNTHETIC_OR_DERIVED,LINEHAUL
+routes,origin_hub_id,text,,False,hubs.hub_id,คีย์ศูนย์ต้นทาง,SYNTHETIC_OR_DERIVED,H_UBP
+routes,destination_hub_id,text,,False,hubs.hub_id,คีย์ศูนย์ปลายทาง,SYNTHETIC_OR_DERIVED,H_CNX
+routes,destination_province,text,,False,,จังหวัดปลายทางจริงของสถานการณ์สมมติ,SYNTHETIC_OR_DERIVED,เชียงใหม่
+routes,destination_region,text,,False,,กลุ่มภูมิภาคที่กำหนดในโครงงาน ไม่ใช่พิกัด GPS,SYNTHETIC_OR_DERIVED,North
+routes,standard_outbound_km,decimal,km,True,,ระยะทางขาออกที่ OSRM คำนวณจากจุดศูนย์เมืองสมมติ,MAP_ESTIMATE,924.01
+routes,standard_return_km,decimal,km,True,,ระยะทางกลับที่คำนวณแยก ไม่สมมติว่าต้องเท่าขาออก,MAP_ESTIMATE,926.214
+routes,osrm_car_duration_hours,decimal,hours,True,,ระยะเวลาคำนวณ profile รถยนต์ ไม่ใช่เวลาจริงหรือเวลารับประกันรถบรรทุก,MAP_ESTIMATE,12.4359
+routes,planned_truck_outbound_hours,decimal,hours,True,,เวลาแผนสมมติ standard_outbound_km/62 + 0.75 ชั่วโมง,SYNTHETIC_OR_DERIVED,15.653
+routes,target_booking_share,decimal,,True,,สัดส่วนตามสถานการณ์ที่ผู้ใช้เลือก ไม่ใช่สัดส่วนตลาดจริง,SYNTHETIC_OR_DERIVED,0.35
+routes,distance_basis,text,,False,,คำอธิบายวิธีเลือกฐานระยะทาง,SYNTHETIC_OR_DERIVED,OSRM current car road-network estimate
+routes,distance_source_id,text,,True,,ที่มาของฐานระยะทาง null สำหรับ local loop ซึ่งสมมติทั้งหมด,SYNTHETIC_OR_DERIVED,SRC_OSRM
+routes,route_api_url,text,,True,,คำขอ OSRM ที่ใช้ดึงฐานระยะทางของเส้นทางนี้,SYNTHETIC_OR_DERIVED,"https://router.project-osrm.org/route/v1/driving/104.8575,15.2448;98.9853,18.7883;104.8575,15.2448?overview=false&steps=false"
+routes,distance_reference_date,ISO8601 date,,True,,วันที่ขอ route จากแผนที่ ไม่ใช่วันวิ่งรถ,SYNTHETIC_OR_DERIVED,2026-10-02
+vehicle_models,model_code,text,,False,,รหัสรุ่นรถ NLR/NPR/FTR,SYNTHETIC_OR_DERIVED,NLR
+vehicle_models,vehicle_type,text,,False,,ประเภทและขนาดรถอิงชนิดรุ่นที่เลือก,SYNTHETIC_OR_DERIVED,4-wheel box truck
+vehicle_models,gross_vehicle_weight_kg,integer,kg,False,,น้ำหนักรวมรถและบรรทุกจากสเปกผู้ผลิต ไม่ใช่น้ำหนักสินค้า,REAL_REFERENCE,4400
+vehicle_models,assumed_tare_kg,integer,kg,False,,น้ำหนักรถรวมตัวถังที่สมมติ,SYNTHETIC_OR_DERIVED,2600
+vehicle_models,capacity_kg,integer,kg,False,,GVW ลบน้ำหนักรถสมมติ เป็นเพดานปฏิบัติงานจำลอง,SYNTHETIC_OR_DERIVED,1800
+vehicle_models,capacity_m3,integer,m3,False,,ปริมาตรบรรทุกสมมติ ไม่ใช่สเปกตัวถังรับรอง,SYNTHETIC_OR_DERIVED,10
+vehicle_models,baseline_km_per_litre,decimal,,False,,อัตราประหยัดน้ำมันตั้งต้นสมมติ ไม่ใช่ผลทดสอบผู้ผลิต,SYNTHETIC_OR_DERIVED,8.8
+vehicle_models,maintenance_thb_per_km,decimal,THB per unit,False,,ต้นทุนซ่อมบำรุงเฉลี่ยสมมติต่อ กม.,SYNTHETIC_OR_DERIVED,1.1
+vehicle_models,depreciation_thb_per_km,decimal,THB per unit,False,,ต้นทุนค่าเสื่อมต่อ กม. สมมติ,SYNTHETIC_OR_DERIVED,0.9
+vehicle_models,crew_hourly_cost_thb,integer,THB,False,,ค่าแรง/ต้นทุนคนขับต่อชั่วโมงสมมติ ไม่ใช่อัตราค่าจ้างจริง,SYNTHETIC_OR_DERIVED,70
+vehicle_models,gvw_source_id,text,,False,,คีย์อ้างอิงน้ำหนักรวมรถจากผู้ผลิต,SYNTHETIC_OR_DERIVED,SRC_ISUZU
+vehicle_models,other_parameters_basis,text,,False,,ระบุว่าสเปกปฏิบัติการนอกจาก GVW เป็นสมมติฐาน,SYNTHETIC_OR_DERIVED,SIMULATED_ASSUMPTION
+vehicles,vehicle_id,text,,False,,รหัสรถจำลอง,SYNTHETIC_OR_DERIVED,V001
+vehicles,vehicle_label,text,,False,,ชื่อรถจำลอง ไม่มีทะเบียนจริง,SYNTHETIC_OR_DERIVED,รถจำลอง-001
+vehicles,model_code,text,,False,vehicle_models.model_code,รหัสรุ่นรถ NLR/NPR/FTR,SYNTHETIC_OR_DERIVED,NPR
+vehicles,operation_type,text,,False,,หน้าที่รถ LINEHAUL หรือ LAST_MILE,SYNTHETIC_OR_DERIVED,LINEHAUL
+vehicles,home_hub_id,text,,False,hubs.hub_id,ศูนย์ประจำที่รถและคนขับต้องกลับ,SYNTHETIC_OR_DERIVED,H_UBP
+vehicles,fuel_type,text,,False,,ประเภทเชื้อเพลิง Diesel ของกองรถ,SYNTHETIC_OR_DERIVED,Diesel
+vehicles,commissioned_date,ISO8601 date,,False,,วันนำรถเข้ากองรถที่สมมติ,SYNTHETIC_OR_DERIVED,2024-01-01
+vehicles,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+drivers,driver_id,text,,False,,รหัสคนขับจำลอง,SYNTHETIC_OR_DERIVED,D001
+drivers,driver_name,text,,False,,ชื่อคนขับสมมติ,SYNTHETIC_OR_DERIVED,คนขับจำลอง-001
+drivers,home_hub_id,text,,False,hubs.hub_id,ศูนย์ประจำที่รถและคนขับต้องกลับ,SYNTHETIC_OR_DERIVED,H_UBP
+drivers,assigned_vehicle_id,text,,False,vehicles.vehicle_id,รถประจำของคนขับจำลอง,SYNTHETIC_OR_DERIVED,V001
+drivers,experience_years,integer,,False,,ประสบการณ์คนขับสมมติ ณ ต้นงวด,SYNTHETIC_OR_DERIVED,13
+drivers,prior_safety_score,decimal,,False,,คะแนนความปลอดภัยสมมติก่อนช่วงข้อมูล,SYNTHETIC_OR_DERIVED,71.6
+drivers,prior_fuel_skill_factor,decimal,,False,,ตัวคูณทักษะประหยัดน้ำมันสมมติก่อนช่วงข้อมูล,SYNTHETIC_OR_DERIVED,0.969
+drivers,licence_type,text,,False,,สมมติว่ามีใบอนุญาตขับรถที่เหมาะสม ไม่มีเลขใบอนุญาตจริง,SYNTHETIC_OR_DERIVED,Simulated appropriate truck licence
+drivers,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+vehicle_maintenance,maintenance_id,text,,False,,คีย์ช่วงซ่อมบำรุง,SYNTHETIC_OR_DERIVED,M00105
+vehicle_maintenance,vehicle_id,text,,False,vehicles.vehicle_id,รหัสรถจำลอง,SYNTHETIC_OR_DERIVED,V001
+vehicle_maintenance,unavailable_from,ISO8601 timestamp +07:00,,False,,เริ่มช่วงที่รถไม่พร้อมใช้งาน,SYNTHETIC_OR_DERIVED,2025-05-08T00:00:00+07:00
+vehicle_maintenance,unavailable_until,ISO8601 timestamp +07:00,,False,,สิ้นสุดช่วงที่รถไม่พร้อมใช้งานแบบ exclusive,SYNTHETIC_OR_DERIVED,2025-05-10T00:00:00+07:00
+vehicle_maintenance,maintenance_type,text,,False,,ประเภทการหยุดรถซ่อมบำรุงที่สมมติ,SYNTHETIC_OR_DERIVED,Scheduled service
+vehicle_maintenance,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+customers,customer_id,text,,False,,รหัสลูกค้าจำลอง,SYNTHETIC_OR_DERIVED,C0001
+customers,customer_name,text,,False,,ชื่อลูกค้าจำลอง ไม่มีข้อมูลส่วนบุคคลจริง,SYNTHETIC_OR_DERIVED,ลูกค้าจำลอง-0001
+customers,customer_type,text,,False,,กลุ่มลูกค้าสมมติ B2B/B2C/VIP,SYNTHETIC_OR_DERIVED,B2C
+customers,province,text,,False,,ชื่อจังหวัดจริงที่ใช้ในสถานการณ์,SYNTHETIC_OR_DERIVED,เชียงใหม่
+customers,destination_hub_id,text,,False,hubs.hub_id,คีย์ศูนย์ปลายทาง,SYNTHETIC_OR_DERIVED,H_CNX
+customers,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+calendar,date_key,integer,,False,,คีย์วันที่จำนวนเต็ม YYYYMMDD,SYNTHETIC_OR_DERIVED,20250401
+calendar,date,ISO8601 date,,False,,วันที่ปฏิทิน ค.ศ.,SYNTHETIC_OR_DERIVED,2025-04-01
+calendar,year,integer,,False,,ปี ค.ศ.,SYNTHETIC_OR_DERIVED,2025
+calendar,quarter,integer,,False,,ไตรมาสปฏิทิน 1-4,SYNTHETIC_OR_DERIVED,2
+calendar,month,integer,,False,,เดือนเลข 1-12,SYNTHETIC_OR_DERIVED,4
+calendar,day,integer,,False,,เลขวันที่ในเดือน,SYNTHETIC_OR_DERIVED,1
+calendar,iso_weekday,integer,,False,,วันในสัปดาห์ 1=จันทร์ ถึง 7=อาทิตย์,SYNTHETIC_OR_DERIVED,2
+calendar,is_weekend,boolean,,False,,เสาร์/อาทิตย์ของปฏิทิน,SYNTHETIC_OR_DERIVED,False
+calendar,is_campaign_day,boolean,,False,,ธงวันกิจกรรมสมมติ เลขวันเท่ากับเดือนหรือวันที่ 12-16 เม.ย. ไม่ได้แทนปฏิทินวันหยุดราชการ,SYNTHETIC_OR_DERIVED,False
+calendar,is_monsoon_context,boolean,,False,,ธงบริบทฤดูฝนตั้งแต่ 15 พ.ค. ไม่ใช่ผลสังเกตฝนจริง,SYNTHETIC_OR_DERIVED,False
+route_conditions,condition_id,text,,False,,รหัสสภาพเส้นทางรายวัน,SYNTHETIC_OR_DERIVED,20250401_CNX
+route_conditions,date,ISO8601 date,,False,,วันที่ปฏิทิน ค.ศ.,SYNTHETIC_OR_DERIVED,2025-04-01
+route_conditions,route_id,text,,False,,รหัสเส้นทางระหว่างศูนย์หรือวงรอบส่งในเมือง,SYNTHETIC_OR_DERIVED,R_CNX
+route_conditions,traffic_forecast_level,integer,,False,,ระดับจราจรพยากรณ์จำลอง 1=เบา 2=ปานกลาง 3=หนาแน่น,SYNTHETIC_OR_DERIVED,2
+route_conditions,rain_forecast_flag,boolean,,False,,ผลพยากรณ์ฝนจำลองที่รู้ล่วงหน้า,SYNTHETIC_OR_DERIVED,False
+route_conditions,observed_rain_flag,boolean,,False,,ฝนที่จำลองว่าทราบภายหลัง ห้ามใช้ทำนายก่อน dispatch,SYNTHETIC_OR_DERIVED,False
+route_conditions,forecast_available_at,ISO8601 timestamp +07:00,,False,,เวลาที่พยากรณ์จำลองพร้อมใช้งาน,SYNTHETIC_OR_DERIVED,2025-04-01T00:00:00+07:00
+route_conditions,observation_available_at,ISO8601 timestamp +07:00,,False,,เวลาที่ผลสังเกตอากาศจำลองถูกทราบ,SYNTHETIC_OR_DERIVED,2025-04-01T23:00:00+07:00
+route_conditions,season_context_source_id,text,,False,,คีย์ข้อมูลฤดูกาลทั่วไปจาก TMD ไม่ใช่ข้อมูลฝนรายวัน,SYNTHETIC_OR_DERIVED,SRC_TMD
+route_conditions,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+shipments,shipment_id,text,,False,,รหัสรายการส่งสินค้า หนึ่งรายการอาจมีหลายกล่อง,SYNTHETIC_OR_DERIVED,S000001
+shipments,customer_id,text,,False,customers.customer_id,รหัสลูกค้าจำลอง,SYNTHETIC_OR_DERIVED,C0018
+shipments,origin_hub_id,text,,False,hubs.hub_id,คีย์ศูนย์ต้นทาง,SYNTHETIC_OR_DERIVED,H_UBP
+shipments,destination_hub_id,text,,False,hubs.hub_id,คีย์ศูนย์ปลายทาง,SYNTHETIC_OR_DERIVED,H_CNX
+shipments,route_id,text,,False,routes.route_id,รหัสเส้นทางระหว่างศูนย์หรือวงรอบส่งในเมือง,SYNTHETIC_OR_DERIVED,R_CNX
+shipments,created_at,ISO8601 timestamp +07:00,,False,,เวลารับคำสั่งส่งสินค้า,SYNTHETIC_OR_DERIVED,2025-04-01T12:16:28+07:00
+shipments,service_level,text,,False,,ระดับบริการสมมติ STANDARD/EXPRESS/ECONOMY,SYNTHETIC_OR_DERIVED,STANDARD
+shipments,sla_calendar_days,integer,,False,,จำนวนวันปฏิทินหลังวันที่รับงานถึงกำหนดส่ง 18:00,SYNTHETIC_OR_DERIVED,2
+shipments,promised_delivery_at,ISO8601 timestamp +07:00,,False,,กำหนดส่งตาม SLA ของบริษัทจำลอง,SYNTHETIC_OR_DERIVED,2025-04-03T18:00:00+07:00
+shipments,weight_kg,decimal,kg,False,,น้ำหนักรวมของ shipment สมมติ,SYNTHETIC_OR_DERIVED,10.09
+shipments,volume_m3,decimal,m3,False,,ปริมาตรรวมสินค้าของ shipment สมมติ,SYNTHETIC_OR_DERIVED,0.0434
+shipments,parcel_count,integer,,False,,จำนวนกล่องสมมติ ceil(weight/20) ไม่ใช่จำนวน shipment,SYNTHETIC_OR_DERIVED,1
+shipments,is_fragile,boolean,,False,,ธงสินค้าแตกหักง่ายสมมติ,SYNTHETIC_OR_DERIVED,False
+shipments,customer_charge_thb,decimal,THB,False,,ค่าบริการจำลองที่แจ้งเมื่อรับงาน แยกจากต้นทุนขนส่ง ไม่ถือเป็นรายได้ที่รับรู้แล้ว,SYNTHETIC_OR_DERIVED,295.16
+shipments,cancelled_at,ISO8601 timestamp +07:00,,True,,เวลายกเลิกก่อนบรรทุกสินค้า,SYNTHETIC_OR_DERIVED,2025-04-01T14:37:30+07:00
+shipments,linehaul_departure_at,ISO8601 timestamp +07:00,,True,,เวลา shipment ออกจากอุบลในเที่ยวระหว่างจังหวัด,SYNTHETIC_OR_DERIVED,2025-04-01T17:30:00+07:00
+shipments,destination_hub_arrival_at,ISO8601 timestamp +07:00,,True,,เวลาที่ shipment ถึงศูนย์ปลายทาง,SYNTHETIC_OR_DERIVED,2025-04-02T09:07:13+07:00
+shipments,first_out_for_delivery_at,ISO8601 timestamp +07:00,,True,,เวลาออกส่งถึงลูกค้าครั้งแรก,SYNTHETIC_OR_DERIVED,2025-04-02T10:37:00+07:00
+shipments,actual_delivery_at,ISO8601 timestamp +07:00,,True,,เวลาส่งถึงลูกค้าจำลองจริงในแบบจำลอง ค่าว่างหากยังไม่ส่งถึง ณ snapshot,SYNTHETIC_OR_DERIVED,2025-04-02T10:51:42+07:00
+shipments,delivery_attempt_count,integer,,False,,จำนวนครั้งที่การลองส่งมีผลแล้วก่อน snapshot,SYNTHETIC_OR_DERIVED,1
+shipments,shipment_status,text,,False,,สถานะล่าสุด ณ snapshot; ความล่าช้าดู is_ontime/is_overdue_open แยก,SYNTHETIC_OR_DERIVED,DELIVERED
+shipments,delay_minutes,integer,minutes,True,,นาทีที่ช้ากว่ากำหนด เฉพาะรายการส่งสำเร็จ,SYNTHETIC_OR_DERIVED,0
+shipments,is_ontime,boolean,,True,,ตรงเวลาหรือไม่ เฉพาะ DELIVERED เท่านั้น,SYNTHETIC_OR_DERIVED,True
+shipments,is_overdue_open,boolean,,False,,ยังไม่ส่งสำเร็จและเลยกำหนด ณ snapshot,SYNTHETIC_OR_DERIVED,False
+shipments,recognized_transport_cost_thb,decimal,THB,False,,ต้นทุนที่รับรู้แล้วจาก legs ของเที่ยวที่ปิดต้นทุน ไม่ใช่ต้นทุนครบทั้งหมดหากยังไม่ settle,SYNTHETIC_OR_DERIVED,205.98
+shipments,all_transport_costs_settled,boolean,,False,,ทุกเที่ยวรวมการกลับรถปิดต้นทุนแล้วหรือไม่,SYNTHETIC_OR_DERIVED,True
+shipments,customer_rating,decimal,,True,,คะแนนลูกค้าหลังส่ง เป็นตัวแปรหลังเหตุการณ์,SYNTHETIC_OR_DERIVED,4.8
+shipments,snapshot_at,ISO8601 timestamp +07:00,,False,,เวลาตัดข้อมูลคงที่ 2025-09-30T23:59:59+07:00,SYNTHETIC_OR_DERIVED,2025-09-30T23:59:59+07:00
+shipments,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+shipment_events,event_id,text,,False,,คีย์ประวัติสถานะ,SYNTHETIC_OR_DERIVED,E0000001
+shipment_events,shipment_id,text,,False,shipments.shipment_id,รหัสรายการส่งสินค้า หนึ่งรายการอาจมีหลายกล่อง,SYNTHETIC_OR_DERIVED,S000001
+shipment_events,event_type,text,,False,,ขั้นตอนการส่งสินค้า ดูสถานะ events ใน README,SYNTHETIC_OR_DERIVED,BOOKED
+shipment_events,event_at,ISO8601 timestamp +07:00,,False,,เวลา milestone ที่เกิดแล้ว ณ snapshot,SYNTHETIC_OR_DERIVED,2025-04-01T12:16:28+07:00
+shipment_events,hub_id,text,,False,hubs.hub_id,รหัสศูนย์จำลอง,SYNTHETIC_OR_DERIVED,H_UBP
+shipment_events,trip_id,text,,True,trips.trip_id,รหัสเที่ยวรถที่รวมการกลับศูนย์ประจำ,SYNTHETIC_OR_DERIVED,T00001
+shipment_events,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+trips,trip_id,text,,False,,รหัสเที่ยวรถที่รวมการกลับศูนย์ประจำ,SYNTHETIC_OR_DERIVED,T00001
+trips,route_id,text,,False,routes.route_id,รหัสเส้นทางระหว่างศูนย์หรือวงรอบส่งในเมือง,SYNTHETIC_OR_DERIVED,R_CNX
+trips,trip_kind,text,,False,,เที่ยวระหว่างจังหวัดหรือเที่ยวส่งถึงลูกค้า,SYNTHETIC_OR_DERIVED,LINEHAUL
+trips,vehicle_id,text,,False,vehicles.vehicle_id,รหัสรถจำลอง,SYNTHETIC_OR_DERIVED,V023
+trips,origin_hub_id,text,,False,,คีย์ศูนย์ต้นทาง,SYNTHETIC_OR_DERIVED,H_UBP
+trips,destination_hub_id,text,,False,,คีย์ศูนย์ปลายทาง,SYNTHETIC_OR_DERIVED,H_CNX
+trips,condition_id,text,,False,route_conditions.condition_id,รหัสสภาพเส้นทางรายวัน,SYNTHETIC_OR_DERIVED,20250401_CNX
+trips,planned_departure_at,ISO8601 timestamp +07:00,,False,,กำหนดออกเดินทางเดิม รวมเวลาโหลด 30 นาที,SYNTHETIC_OR_DERIVED,2025-04-01T17:30:00+07:00
+trips,planned_completion_at,ISO8601 timestamp +07:00,,False,,กำหนดจบเที่ยวตามตารางก่อนทราบผลจริง,SYNTHETIC_OR_DERIVED,2025-04-03T12:41:30+07:00
+trips,actual_departure_at,ISO8601 timestamp +07:00,,True,,เวลาออกเดินทางจำลองที่เกิดแล้ว,SYNTHETIC_OR_DERIVED,2025-04-01T17:30:00+07:00
+trips,actual_destination_arrival_at,ISO8601 timestamp +07:00,,True,,เวลา linehaul ถึงศูนย์ปลายทาง ไม่ใช่เวลาส่งถึงลูกค้า,SYNTHETIC_OR_DERIVED,2025-04-02T09:07:13+07:00
+trips,actual_return_departure_at,ISO8601 timestamp +07:00,,True,,เวลาออกจากศูนย์ปลายทางกลับอุบล,SYNTHETIC_OR_DERIVED,2025-04-02T21:07:13+07:00
+trips,actual_completion_at,ISO8601 timestamp +07:00,,True,,เวลารถจบเที่ยวและกลับศูนย์ประจำก่อน snapshot,SYNTHETIC_OR_DERIVED,2025-04-03T12:37:49+07:00
+trips,trip_status,text,,False,,สถานะรถ PLANNED/IN_TRANSIT/AT_DESTINATION/RETURNING/COMPLETED,SYNTHETIC_OR_DERIVED,COMPLETED
+trips,shipment_count,integer,,False,,จำนวน shipment ใน manifest เที่ยวนี้,SYNTHETIC_OR_DERIVED,19
+trips,load_weight_kg,decimal,kg,False,,ผลรวมน้ำหนัก shipment ที่บรรทุกเที่ยวนี้,SYNTHETIC_OR_DERIVED,1347.38
+trips,load_volume_m3,decimal,m3,False,,ผลรวมปริมาตรสินค้าที่บรรทุกเที่ยวนี้,SYNTHETIC_OR_DERIVED,5.4587
+trips,planned_round_trip_km,decimal,km,False,,ระยะทางแผนทั้งรอบรวมกลับ,SYNTHETIC_OR_DERIVED,1850.224
+trips,actual_round_trip_km,decimal,km,True,,ระยะทางจำลองเต็มเที่ยวรวมขากลับ แสดงเมื่อเที่ยวเสร็จ,SYNTHETIC_OR_DERIVED,1874.242
+trips,actual_outbound_km,decimal,km,True,,ระยะทางขาออกที่เสร็จแล้ว สำหรับ last mile คือทั้งวงรอบเมื่อเสร็จ,SYNTHETIC_OR_DERIVED,932.636
+trips,driving_hours,decimal,hours,True,,ชั่วโมงขับจำลองทั้งเที่ยว ไม่รวมพักปลายทาง แสดงเมื่อปิดเที่ยว,SYNTHETIC_OR_DERIVED,29.347
+trips,actual_fuel_litres,decimal,litres,True,,ลิตรน้ำมันจำลองสำหรับทั้งขาไปและกลับ แสดงเมื่อปิดเที่ยว,SYNTHETIC_OR_DERIVED,359.436
+trips,fuel_price_id,text,,False,fuel_price_reference.fuel_price_id,คีย์ราคาดีเซล benchmark รายเดือน,SYNTHETIC_OR_DERIVED,FUEL202504
+trips,planned_freight_cost_thb,decimal,THB,False,,งบประมาณต้นทุนเที่ยวจากแบบจำลองก่อนปิดเที่ยว,SYNTHETIC_OR_DERIVED,25918.99
+trips,actual_freight_cost_thb,decimal,THB,True,,ผลรวมต้นทุนจำลอง 6 หมวด ณ ปิดเที่ยว,SYNTHETIC_OR_DERIVED,26666.19
+trips,actual_fuel_cost_thb,decimal,THB,True,,ต้นทุนน้ำมันที่ปิดแล้ว เป็นส่วนหนึ่งของต้นทุนรวม,SYNTHETIC_OR_DERIVED,11480.39
+trips,cost_is_settled,boolean,,False,,ปิดเที่ยวและรับรู้ต้นทุนแล้ว,SYNTHETIC_OR_DERIVED,True
+trips,cost_basis,text,,False,,ที่มาของสูตรต้นทุน แยกสมมติฐานกับราคาน้ำมันอ้างอิง,SYNTHETIC_OR_DERIVED,Synthetic cost model; fuel unit-price benchmark from EPPO
+trips,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+trip_driver_assignments,assignment_id,text,,False,,คีย์การมอบหมายคนขับต่อเที่ยว,SYNTHETIC_OR_DERIVED,T00001_D045
+trip_driver_assignments,trip_id,text,,False,trips.trip_id,รหัสเที่ยวรถที่รวมการกลับศูนย์ประจำ,SYNTHETIC_OR_DERIVED,T00001
+trip_driver_assignments,driver_id,text,,False,drivers.driver_id,รหัสคนขับจำลอง,SYNTHETIC_OR_DERIVED,D045
+trip_driver_assignments,crew_slot,integer,,False,,ตำแหน่งคนขับ 1/2 ในลูกเรือของเที่ยว,SYNTHETIC_OR_DERIVED,1
+trip_driver_assignments,reservation_start_at,ISO8601 timestamp +07:00,,True,,เริ่มจองเวลาคนขับจริงในแบบจำลอง ถ้ายังไม่เริ่มจะว่าง,SYNTHETIC_OR_DERIVED,2025-04-01T17:00:00+07:00
+trip_driver_assignments,reservation_end_at,ISO8601 timestamp +07:00,,True,,สิ้นสุดจริงแสดงเมื่อสิ้นสุดก่อน snapshot เท่านั้น,SYNTHETIC_OR_DERIVED,2025-04-03T12:37:49+07:00
+trip_driver_assignments,planned_assignment,boolean,,False,,การมอบหมายเที่ยวที่ยังไม่เริ่ม ณ snapshot,SYNTHETIC_OR_DERIVED,False
+trip_driver_assignments,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+trip_costs,cost_id,text,,False,,คีย์ต้นทุนต่อเที่ยวและหมวด,SYNTHETIC_OR_DERIVED,T00001_FUEL
+trip_costs,trip_id,text,,False,trips.trip_id,รหัสเที่ยวรถที่รวมการกลับศูนย์ประจำ,SYNTHETIC_OR_DERIVED,T00001
+trip_costs,category,text,,False,,หมวดต้นทุน ดูรายชื่อ 6 หมวดใน README,SYNTHETIC_OR_DERIVED,FUEL
+trip_costs,amount_thb,decimal,THB,False,,จำนวนเงินในหมวดต้นทุนของเที่ยวที่ปิดแล้ว,SYNTHETIC_OR_DERIVED,11480.39
+trip_costs,recognized_at,ISO8601 timestamp +07:00,,False,,เวลาจบเที่ยวและรับรู้ต้นทุน,SYNTHETIC_OR_DERIVED,2025-04-03T12:37:49+07:00
+trip_costs,basis,text,,False,,วิธีได้มาของจำนวนเงินในแบบจำลอง,SYNTHETIC_OR_DERIVED,Synthetic settlement/accrual; not a real invoice
+trip_costs,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+shipment_legs,shipment_leg_id,text,,False,,คีย์เชื่อม shipment และเที่ยวที่รับขนจริงหรือวางแผนไว้,SYNTHETIC_OR_DERIVED,S000001_T00001
+shipment_legs,shipment_id,text,,False,shipments.shipment_id,รหัสรายการส่งสินค้า หนึ่งรายการอาจมีหลายกล่อง,SYNTHETIC_OR_DERIVED,S000001
+shipment_legs,trip_id,text,,False,trips.trip_id,รหัสเที่ยวรถที่รวมการกลับศูนย์ประจำ,SYNTHETIC_OR_DERIVED,T00001
+shipment_legs,leg_type,text,,False,,ช่วง LINEHAUL หรือ LAST_MILE,SYNTHETIC_OR_DERIVED,LINEHAUL
+shipment_legs,delivery_attempt,integer,,True,,ครั้งที่ลองส่งในเที่ยว last mile; null สำหรับ linehaul,SYNTHETIC_OR_DERIVED,1
+shipment_legs,allocated_freight_cost_thb,decimal,THB,True,,ต้นทุนทั้งเที่ยวที่แบ่งให้ shipment ตามน้ำหนัก,SYNTHETIC_OR_DERIVED,199.69
+shipment_legs,allocation_basis,text,,False,,หลักเกณฑ์แบ่งต้นทุนเที่ยวให้ shipment,SYNTHETIC_OR_DERIVED,"Weight-based, including empty return on linehaul; completed trips only"
+shipment_legs,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True
+vehicle_daily,vehicle_day_id,text,,False,,คีย์รถหนึ่งคันต่อวัน,SYNTHETIC_OR_DERIVED,V001_20250401
+vehicle_daily,vehicle_id,text,,False,vehicles.vehicle_id,รหัสรถจำลอง,SYNTHETIC_OR_DERIVED,V001
+vehicle_daily,date,ISO8601 date,,False,,วันที่ปฏิทิน ค.ศ.,SYNTHETIC_OR_DERIVED,2025-04-01
+vehicle_daily,available_hours,decimal,hours,False,,24 ชั่วโมงลบช่วง maintenance ของวันนั้น,SYNTHETIC_OR_DERIVED,24.0
+vehicle_daily,occupied_hours,integer,hours,False,,เวลาครอบครองรถรวมพักปลายทาง ไม่ใช่ชั่วโมงเครื่องยนต์,SYNTHETIC_OR_DERIVED,0
+vehicle_daily,departure_count,integer,,False,,จำนวนเที่ยวที่ออกเดินทางจริงในวันนั้น,SYNTHETIC_OR_DERIVED,0
+vehicle_daily,is_active,boolean,,False,,มีเวลาครอบครองรถมากกว่า 0 ชั่วโมงในวันนั้น รวมเที่ยวต่อเนื่องข้ามวัน,SYNTHETIC_OR_DERIVED,False
+vehicle_daily,maintenance_hours,integer,hours,False,,เวลาที่รถไม่พร้อมใช้งานจาก maintenance ในวันนั้น,SYNTHETIC_OR_DERIVED,0
+vehicle_daily,occupied_definition,text,,False,,นิยามชั่วโมงครอบครองที่รวมพัก/กลับรถ,SYNTHETIC_OR_DERIVED,Reserved trip time including dwell and empty return; not engine-on hours
+vehicle_daily,is_synthetic,boolean,,False,,True สำหรับระเบียนจำลอง,SYNTHETIC_OR_DERIVED,True

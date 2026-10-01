@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 19726,
+          "summary": "",
+          "duration": 16454.5,
+          "distance": 378724.8
+        },
+        {
+          "steps": [],
+          "weight": 19777.1,
+          "summary": "",
+          "duration": 16504.3,
+          "distance": 378091.8
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 39503.1,
+      "duration": 32958.8,
+      "distance": 756816.6
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "hcHCkv___38DAAAABwAAAAAAAAAFAAAA-kncQGveuUAAAAAAx9oOQQMAAAAHAAAAAAAAAAUAAADQJwEAiOMVBjST5ACI4xUGPJPkAAAA7xAAAAAA",
+      "location": [
+        102.0978,
+        14.979892
+      ],
+      "name": "ถนนมิตรภาพ",
+      "distance": 0.8851876309
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

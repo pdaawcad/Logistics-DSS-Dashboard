@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 30854,
+          "summary": "",
+          "duration": 27582.5,
+          "distance": 604414.5
+        },
+        {
+          "steps": [],
+          "weight": 31172.7,
+          "summary": "",
+          "duration": 27899.9,
+          "distance": 605477.1
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 62026.7,
+      "duration": 55482.4,
+      "distance": 1209891.6
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "Zgh9gP___38HAAAAEgAAABUAAAAcAAAA2LicQDcj5kBbtlpBUj-TQQcAAAASAAAAFQAAABwAAADQJwEALYn9BbHn0QAoif0FjOfRAAIATxEAAAAA",
+      "location": [
+        100.501805,
+        13.756337
+      ],
+      "name": "วงเวียนอนุสาวรีย์ประชาธิปไตย",
+      "distance": 4.12913216
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

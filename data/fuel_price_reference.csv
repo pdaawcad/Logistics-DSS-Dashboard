@@ -1,0 +1,7 @@
+﻿fuel_price_id,reference_month,fuel_type,benchmark_thb_per_litre,source_id,is_observed_daily_price
+FUEL202504,2025-04,Diesel,31.94,SRC_EPPO_04,False
+FUEL202505,2025-05,Diesel,31.94,SRC_EPPO_05,False
+FUEL202506,2025-06,Diesel,31.94,SRC_EPPO_06,False
+FUEL202507,2025-07,Diesel,31.94,SRC_EPPO_07,False
+FUEL202508,2025-08,Diesel,31.94,SRC_EPPO_08,False
+FUEL202509,2025-09,Diesel,31.94,SRC_EPPO_09,False

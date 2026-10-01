@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 10980.8,
+          "summary": "",
+          "duration": 7709.3,
+          "distance": 172080
+        },
+        {
+          "steps": [],
+          "weight": 10988.4,
+          "summary": "",
+          "duration": 7715.6,
+          "distance": 172131.2
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 21969.2,
+      "duration": 15424.9,
+      "distance": 344211.2
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "JVgFkP___39EAAAAZAAAAAAAAAAAAAAA44n4QkaUZEIAAAAAAAAAAEQAAABkAAAAAAAAAAAAAADQJwEApZotBnn29ACgmi0GKPb0AAAAHxEAAAAA",
+      "location": [
+        103.652005,
+        16.053881
+      ],
+      "name": "ถนนเทวาภิบาล",
+      "distance": 8.979366788
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}

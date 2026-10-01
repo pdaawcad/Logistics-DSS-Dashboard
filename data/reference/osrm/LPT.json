@@ -1,0 +1,56 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [],
+          "weight": 43359.7,
+          "summary": "",
+          "duration": 40088.2,
+          "distance": 827648.6
+        },
+        {
+          "steps": [],
+          "weight": 43385.7,
+          "summary": "",
+          "duration": 40112.9,
+          "distance": 827832.4
+        }
+      ],
+      "weight_name": "routability",
+      "weight": 86745.4,
+      "duration": 80201.1,
+      "distance": 1655481
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    },
+    {
+      "hint": "0aVQj____38cAAAAaQAAAAAAAAAAAAAAsVugQQDZUkIAAAAAAAAAABwAAABpAAAAAAAAAAAAAADQJwEAOyfuBS0QFwFEJ-4FoBAXAQAA7wUAAAAA",
+      "location": [
+        99.493691,
+        18.288685
+      ],
+      "name": "ถนนบุญวาทย์",
+      "distance": 12.76413368
+    },
+    {
+      "hint": "ixXPlLgZz5TVAAAAAAAAAAAAAAAAAAAAmcexQgAAAAAAAAAAAAAAANUAAAAAAAAAAAAAAAAAAADQJwEAPfw_Btei6ACc_z8GAJ7oAAAAjw4AAAAA",
+      "location": [
+        104.856637,
+        15.246039
+      ],
+      "name": "",
+      "distance": 165.505658
+    }
+  ]
+}
